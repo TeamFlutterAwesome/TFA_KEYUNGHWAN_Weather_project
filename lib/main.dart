@@ -6,13 +6,11 @@ import 'package:weather_project_tabview/sea_information/fourth_page.dart';
 import 'package:weather_project_tabview/components/theme.dart';
 import 'package:weather_project_tabview/components/constants.dart';
 
-
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatefulWidget {
-
   @override
   _MyAppState createState() => _MyAppState();
 }
@@ -23,7 +21,6 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Weather project',
       theme: ThemeData(
-
         primarySwatch: Colors.blue,
       ),
       home: MyHomeScreen(),
@@ -31,12 +28,16 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
-
 class MyHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    double itemSize;
+    Size size = MediaQuery.of(context).size; // 앱이 구동되는 모바일폰의 화면 사이즈를 가지고 오는 것
+    itemSize = size.width / 3;
+
     // 1
     List<String> categories = ["날씨정보", "날씨영상", "미세먼지", "바다날씨"];
+
     // 2
     return DefaultTabController(
       // 3
@@ -47,7 +48,6 @@ class MyHomeScreen extends StatelessWidget {
         appBar: AppBar(
           automaticallyImplyLeading: false,
           title: Text("Weather app project"),
-
           bottom: PreferredSize(
             child: Container(
               decoration: BoxDecoration(
@@ -57,7 +57,7 @@ class MyHomeScreen extends StatelessWidget {
               child: TabBar(
                 tabs: List.generate(
                   categories.length,
-                      (index) => Tab(
+                  (index) => Tab(
                     text: categories[index],
                   ),
                 ),
@@ -77,16 +77,35 @@ class MyHomeScreen extends StatelessWidget {
           ),
         ),
         // 8
-        body: TabBarView(
+        body: Stack(
           children: [
-            first_page(),
-            second_page(),
-            third_page(),
-            fourth_page()
+            Positioned(
+              left: 0,
+              right: 0,
+              top: 0,
+              bottom: 0,
+              child: TabBarView(
+                children: [
+                  first_page(),
+                  second_page(),
+                  third_page(),
+                  fourth_page()
+                ],
+              ),
+            ),
+            Positioned(
+              left: 0,
+              right: 0,
+              bottom: 0,
+              height: itemSize / 2,
+              // 바텀바의 크기 조정
+              child: Container(
+                color: Colors.black, // 배너가 들어가야 할 위치
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 }
-
