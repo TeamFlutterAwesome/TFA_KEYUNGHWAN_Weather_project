@@ -5,6 +5,7 @@ import 'package:weather_project_tabview/dust_information/third_page.dart';
 import 'package:weather_project_tabview/sea_information/fourth_page.dart';
 import 'package:weather_project_tabview/components/theme.dart';
 import 'package:weather_project_tabview/components/constants.dart';
+//import 'package:weather_project_tabview/wind_information/fifth_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -69,7 +70,7 @@ class MyHomeScreen extends StatelessWidget {
                     color: kPrimaryColor, fontWeight: FontWeight.bold),
                 // 7
                 indicator: UnderlineTabIndicator(
-                  borderSide: BorderSide(width: 4, color: kPrimaryColor),
+                  borderSide: BorderSide(width: 5, color: kPrimaryColor),
                 ),
               ),
             ),
@@ -89,7 +90,8 @@ class MyHomeScreen extends StatelessWidget {
                   first_page(),
                   second_page(),
                   third_page(),
-                  fourth_page()
+                  fourth_page(),
+                //  fifth_page()
                 ],
               ),
             ),
