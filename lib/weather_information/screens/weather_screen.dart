@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:timer_builder/timer_builder.dart';
 import 'package:intl/intl.dart';
+import 'package:weather_project_tabview/weather_information/model/model.dart';
 
 class WeatherScreen extends StatefulWidget {
   WeatherScreen({this.parseWeatherData});
@@ -14,8 +15,10 @@ class WeatherScreen extends StatefulWidget {
 }
 
 class _WeatherScreenState extends State<WeatherScreen> {
+  Model model = Model();
   String cityName;
   int temp;
+  Widget icon;
   var date = DateTime.now();
 
   @override
@@ -27,8 +30,10 @@ class _WeatherScreenState extends State<WeatherScreen> {
 
   void updateData(dynamic weatherData) {
     double temp2 = weatherData['main']['temp'];
+    int condition = weatherData['weather'][0]['id'];
     temp = temp2.round();
     cityName = weatherData['name'];
+    icon = model.getWeatherIcon(condition);
 
     print(temp);
     print(cityName);
@@ -126,8 +131,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                               ),
                               Row(
                                 children: [
-                                  SvgPicture.asset(
-                                      'lib/weather_information/svg/Cloud-Sun.svg'),
+                                  icon,
                                   SizedBox(width: 10.0),
                                   Text(
                                     'cloud sky',
