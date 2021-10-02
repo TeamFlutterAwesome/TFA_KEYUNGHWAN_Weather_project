@@ -8,6 +8,7 @@ class first_page extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Weather app',
       theme: ThemeData(
         primarySwatch: Colors.blue,
