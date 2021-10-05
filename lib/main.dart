@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:weather_project_tabview/weather_information/first_page.dart';
 import 'package:weather_project_tabview/weather_image/second_page.dart';
 import 'package:weather_project_tabview/dust_information/third_page.dart';
@@ -23,7 +24,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       title: 'Weather project',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.orange,
       ),
       home: MyHomeScreen(),
     );
@@ -49,7 +50,11 @@ class MyHomeScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          title: Text("Weather app project"),
+          title: Text("Weather app project",
+            style: GoogleFonts.lato(
+                fontSize: 25.0,
+                fontWeight: FontWeight.bold,
+                color: Colors.white),),
           bottom: PreferredSize(
             child: Container(
               decoration: BoxDecoration(
