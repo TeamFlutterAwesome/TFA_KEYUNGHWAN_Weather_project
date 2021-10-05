@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:weather_project_tabview/weather_information/data/network.dart';
 import 'package:weather_project_tabview/weather_information/data/my_position.dart';
 import 'package:weather_project_tabview/weather_information/screens/weather_screen.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+
 const apiKey = '40583261296482c881a469ddb317bef5';
 
 class Loading extends StatefulWidget {
@@ -58,6 +60,15 @@ class _LoadingState extends State<Loading> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
+       backgroundColor: Colors.amber,
+      body: Center(
+        child: SpinKitDoubleBounce(
+          color: Colors.white,
+          size: 80.0,
+        ),
+      ),
+
+
         // body: Center(
         //   child: RaisedButton(
         //     onPressed: null,

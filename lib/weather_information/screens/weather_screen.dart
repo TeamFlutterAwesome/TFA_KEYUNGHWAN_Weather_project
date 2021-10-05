@@ -39,8 +39,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
     int condition = weatherData['weather'][0]['id'];
     int index = airData['list'][0]['main']['aqi'];
     des = weatherData['weather'][0]['description'];
-    dust1 = airData['list'][0]['components']['pm10'];
-    dust2 = airData['list'][0]['components']['pm2_5'];
+    dust1 = airData['list'][0]['components']['pm10'].toDouble();
+    dust2 = airData['list'][0]['components']['pm2_5'].toDouble();
     temp = temp2.round();
     cityName = weatherData['name'];
     icon = model.getWeatherIcon(condition);
