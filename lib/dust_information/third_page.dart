@@ -13,7 +13,8 @@ class third_page extends StatelessWidget {
     return Scaffold(
       body:
       WebView(
-        initialUrl: 'https://www.weather.go.kr/w/dust/image/sat.do',
+       // initialUrl: 'https://www.weather.go.kr/w/dust/image/sat.do',
+        initialUrl: 'https://earth.nullschool.net/#current/chem/surface/level/overlay=cosc/orthographic=-231.95,38.77,1890/loc=127.058,37.277',
         javascriptMode: JavascriptMode.unrestricted,
 
 

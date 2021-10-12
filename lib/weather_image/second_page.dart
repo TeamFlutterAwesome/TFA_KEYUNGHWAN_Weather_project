@@ -64,6 +64,7 @@ class _second_pageState extends State<second_page> {
          //  initialUrl: 'https://www.weather.go.kr/w/image/radar.do',
            initialUrl: 'https://www.weather.go.kr/wgis-nuri/html/map.html',
 
+
            // initialUrl: 'http://www.kweather.co.kr/data/RDR/RDR_CMI_202110092300.png',
 
             javascriptMode: JavascriptMode.unrestricted,

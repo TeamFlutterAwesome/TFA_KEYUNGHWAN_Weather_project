@@ -98,12 +98,12 @@ class _WeatherScreenState extends State<WeatherScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               SizedBox(
-                                height: 150.0,
+                                height: 120.0,
                               ),
                               Text(
                                 '$cityName',
                                 style: GoogleFonts.lato(
-                                    fontSize: 35.0,
+                                    fontSize: 70.0,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.white),
                               ),
@@ -116,17 +116,17 @@ class _WeatherScreenState extends State<WeatherScreen> {
                                       return Text(
                                         '${getSystemTime()}',
                                         style: GoogleFonts.lato(
-                                            fontSize: 16.0,
+                                            fontSize: 20.0,
                                             color: Colors.white),
                                       );
                                     },
                                   ),
                                   Text(DateFormat(' - EEEE, ').format(date),
                                       style: GoogleFonts.lato(
-                                          fontSize: 16.0, color: Colors.white)),
+                                          fontSize: 20.0, color: Colors.white)),
                                   Text(DateFormat('d MMM, yyy').format(date),
                                       style: GoogleFonts.lato(
-                                          fontSize: 16.0, color: Colors.white))
+                                          fontSize: 20.0, color: Colors.white))
                                 ], //children
                               )
                             ], //children
@@ -144,11 +144,11 @@ class _WeatherScreenState extends State<WeatherScreen> {
                               Row(
                                 children: [
                                   icon,
-                                  SizedBox(width: 10.0),
+                                  SizedBox(width: 20.0),
                                   Text(
                                     '$des',
                                     style: GoogleFonts.lato(
-                                      fontSize: 16.0,
+                                      fontSize: 20.0,
                                       color: Colors.white,
                                     ),
                                   ),

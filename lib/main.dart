@@ -39,7 +39,7 @@ class MyHomeScreen extends StatelessWidget {
     itemSize = size.width / 3;
 
     // 1
-    List<String> categories = ["날씨정보", "날씨영상", "미세먼지", "바다날씨"];
+    List<String> categories = ["날씨정보", "날씨영상", "미세먼지", "로또"];
 
     // 2
     return DefaultTabController(

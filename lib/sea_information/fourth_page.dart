@@ -12,7 +12,8 @@ class fourth_page extends StatelessWidget {
     return Scaffold(
       body:
       WebView(
-        initialUrl: 'https://www.weather.go.kr/w/ocean/chart/wave-model.do',
+      //  initialUrl: 'https://www.weather.go.kr/w/ocean/chart/wave-model.do',
+        initialUrl: 'https://www.dhlottery.co.kr/common.do?method=main',
         javascriptMode: JavascriptMode.unrestricted,
 
 
