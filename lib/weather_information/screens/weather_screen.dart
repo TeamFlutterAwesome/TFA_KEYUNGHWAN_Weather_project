@@ -20,14 +20,12 @@ class _WeatherScreenState extends State<WeatherScreen> {
   String cityName;
   int temp;
   Widget icon;
-<<<<<<< HEAD
   String des;
   Widget airIcon;
   Widget airState;
   double dust1;
   double dust2;
-=======
->>>>>>> master
+
   var date = DateTime.now();
 
   @override
@@ -37,7 +35,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
     updateData(widget.parseWeatherData, widget.parseAirPollution);
   }
 
-<<<<<<< HEAD
+
   void updateData(dynamic weatherData, dynamic airData) {
     double temp2 = weatherData['main']['temp'].toDouble();
     int condition = weatherData['weather'][0]['id'];
@@ -50,14 +48,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
     icon = model.getWeatherIcon(condition);
     airIcon = model.getAirIcon(index);
     airState = model.getAirCondition(index);
-=======
-  void updateData(dynamic weatherData) {
-    double temp2 = weatherData['main']['temp'];
-    int condition = weatherData['weather'][0]['id'];
-    temp = temp2.round();
-    cityName = weatherData['name'];
-    icon = model.getWeatherIcon(condition);
->>>>>>> master
+
 
     print(temp);
     print(cityName);
@@ -156,11 +147,9 @@ class _WeatherScreenState extends State<WeatherScreen> {
                               Row(
                                 children: [
                                   icon,
-<<<<<<< HEAD
+
                                   SizedBox(width: 20.0),
-=======
-                                  SizedBox(width: 10.0),
->>>>>>> master
+
                                   Text(
                                     '$des',
                                     style: GoogleFonts.lato(
