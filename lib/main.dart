@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:weather_project_tabview/weather_information/first_page.dart';
@@ -6,6 +8,7 @@ import 'package:weather_project_tabview/dust_information/third_page.dart';
 import 'package:weather_project_tabview/sea_information/fourth_page.dart';
 import 'package:weather_project_tabview/components/theme.dart';
 import 'package:weather_project_tabview/components/constants.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 //import 'package:weather_project_tabview/wind_information/fifth_page.dart';
 
 void main() {
@@ -18,6 +21,25 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+
+  final String iOSTestUnitId = 'ca-app-pub-3940256099942544/2934735716';
+  final String androidTestUnitId = 'ca-app-pub-3940256099942544/6300978111';
+
+  BannerAd banner;
+
+  @override
+  void initState() {
+    super.initState();
+
+    banner = BannerAd(
+      listener: BannerAdListener(),
+      size: AdSize.banner,
+      adUnitId: Platform.isIO
+      S ? iOSTestUnitId : androidTestUnitId,
+      request: AdRequest(),
+    )..load();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -32,6 +54,9 @@ class _MyAppState extends State<MyApp> {
 }
 
 class MyHomeScreen extends StatelessWidget {
+
+
+
   @override
   Widget build(BuildContext context) {
     double itemSize;
