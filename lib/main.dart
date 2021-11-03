@@ -21,9 +21,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
-
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -38,18 +35,11 @@ class _MyAppState extends State<MyApp> {
 }
 
 class MyHomeScreen extends StatefulWidget {
-
-
-
   @override
   State<MyHomeScreen> createState() => _MyHomeScreenState();
 }
 
-
-
-
 class _MyHomeScreenState extends State<MyHomeScreen> {
-
   final String iOSTestUnitId = 'ca-app-pub-3940256099942544/2934735716';
   final String androidTestUnitId = 'ca-app-pub-3940256099942544/6300978111';
 
@@ -85,11 +75,13 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
       child: Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          title: Text("Weather app project",
+          title: Text(
+            "Weather app project",
             style: GoogleFonts.lato(
                 fontSize: 25.0,
                 fontWeight: FontWeight.bold,
-                color: Colors.white),),
+                color: Colors.white),
+          ),
           bottom: PreferredSize(
             child: Container(
               decoration: BoxDecoration(
@@ -132,7 +124,7 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
                   second_page(),
                   third_page(),
                   fourth_page(),
-                //  fifth_page()
+                  //  fifth_page()
                 ],
               ),
             ),
@@ -140,11 +132,14 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
               left: 0,
               right: 0,
               bottom: 0,
-              height: itemSize / 2,
+              height: itemSize / 2.0,
               // 바텀바의 크기 조정
+
               child: Container(
-               // height: 80.0,
-                child: this.banner == null ? Container() : AdWidget(ad: this.banner),
+                height: 90.0,
+                child: this.banner == null
+                    ? Container()
+                    : AdWidget(ad: this.banner),
                 //color: Colors.black, // 배너가 들어가야 할 위치
               ),
             ),
