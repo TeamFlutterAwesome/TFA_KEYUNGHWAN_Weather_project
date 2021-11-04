@@ -1,4 +1,4 @@
-import 'dart:io';
+// import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -8,7 +8,7 @@ import 'package:weather_project_tabview/dust_information/third_page.dart';
 import 'package:weather_project_tabview/sea_information/fourth_page.dart';
 import 'package:weather_project_tabview/components/theme.dart';
 import 'package:weather_project_tabview/components/constants.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
+// import 'package:google_mobile_ads/google_mobile_ads.dart';
 //import 'package:weather_project_tabview/wind_information/fifth_page.dart';
 
 void main() {
@@ -40,22 +40,22 @@ class MyHomeScreen extends StatefulWidget {
 }
 
 class _MyHomeScreenState extends State<MyHomeScreen> {
-  final String iOSTestUnitId = 'ca-app-pub-3940256099942544/2934735716';
-  final String androidTestUnitId = 'ca-app-pub-3940256099942544/6300978111';
-
-  BannerAd banner;
-
-  @override
-  void initState() {
-    super.initState();
-
-    banner = BannerAd(
-      listener: AdListener(),
-      size: AdSize.banner,
-      adUnitId: Platform.isIOS ? iOSTestUnitId : androidTestUnitId,
-      request: AdRequest(),
-    )..load();
-  }
+  // final String iOSTestUnitId = 'ca-app-pub-3940256099942544/2934735716';
+  // final String androidTestUnitId = 'ca-app-pub-3940256099942544/6300978111';
+  //
+  // BannerAd banner;
+  //
+  // @override
+  // void initState() {
+  //   super.initState();
+  //
+  //   banner = BannerAd(
+  //     listener: AdListener(),
+  //     size: AdSize.banner,
+  //     adUnitId: Platform.isIOS ? iOSTestUnitId : androidTestUnitId,
+  //     request: AdRequest(),
+  //   )..load();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -128,21 +128,21 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
                 ],
               ),
             ),
-            Positioned(
-              left: 0,
-              right: 0,
-              bottom: 0,
-              height: itemSize / 2.0,
+            // Positioned(
+            //   left: 0,
+            //   right: 0,
+            //   bottom: 0,
+            //   height: itemSize / 2.0,
               // 바텀바의 크기 조정
 
-              child: Container(
-                height: 90.0,
-                child: this.banner == null
-                    ? Container()
-                    : AdWidget(ad: this.banner),
-                //color: Colors.black, // 배너가 들어가야 할 위치
-              ),
-            ),
+              // child: Container(
+              //   height: 90.0,
+              //   child: this.banner == null
+              //       ? Container()
+              //       : AdWidget(ad: this.banner),
+              //   //color: Colors.black, // 배너가 들어가야 할 위치
+              // ),
+            // ),
           ],
         ),
       ),

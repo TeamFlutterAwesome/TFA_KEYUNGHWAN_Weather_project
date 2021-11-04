@@ -4,6 +4,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:timer_builder/timer_builder.dart';
 import 'package:intl/intl.dart';
 import 'package:weather_project_tabview/weather_information/model/model.dart';
+import 'dart:io';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class WeatherScreen extends StatefulWidget {
   WeatherScreen({this.parseWeatherData, this.parseAirPollution});
@@ -16,6 +18,13 @@ class WeatherScreen extends StatefulWidget {
 }
 
 class _WeatherScreenState extends State<WeatherScreen> {
+
+  final String iOSTestUnitId = 'ca-app-pub-3940256099942544/2934735716';
+  final String androidTestUnitId = 'ca-app-pub-3940256099942544/6300978111';
+
+  BannerAd banner;
+
+
   Model model = Model();
   String cityName;
   int temp;
@@ -33,6 +42,13 @@ class _WeatherScreenState extends State<WeatherScreen> {
     // TODO: implement initState
     super.initState();
     updateData(widget.parseWeatherData, widget.parseAirPollution);
+
+    banner = BannerAd(
+      listener: AdListener(),
+      size: AdSize.banner,
+      adUnitId: Platform.isIOS ? iOSTestUnitId : androidTestUnitId,
+      request: AdRequest(),
+    )..load();
   }
 
 
@@ -245,7 +261,15 @@ class _WeatherScreenState extends State<WeatherScreen> {
                             ),
                           ],
                         ),
-                        SizedBox(height: 70), // 메인 프레임의 하단 박스(배너자리)에 가려서 공간을
+                        Container(
+                            height: 90.0,
+                            child: this.banner == null
+                                ? Container()
+                                : AdWidget(ad: this.banner),
+                            //color: Colors.black, // 배너가 들어가야 할 위치
+                           ),
+
+                        //SizedBox(height: 70), // 메인 프레임의 하단 박스(배너자리)에 가려서 공간을
                         // 확보하기 이해 SizeBox를 넣었음.
                       ],
                     )
