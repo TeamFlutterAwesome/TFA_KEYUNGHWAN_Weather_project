@@ -61,7 +61,7 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
   Widget build(BuildContext context) {
     double itemSize;
     Size size = MediaQuery.of(context).size; // 앱이 구동되는 모바일폰의 화면 사이즈를 가지고 오는 것
-    itemSize = size.width / 3;
+    itemSize = size.width / 3; // 초기값 3
 
     // 1
     List<String> categories = ["날씨정보", "날씨영상", "미세먼지", "로또"];

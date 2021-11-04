@@ -19,6 +19,8 @@ class WeatherScreen extends StatefulWidget {
 
 class _WeatherScreenState extends State<WeatherScreen> {
 
+
+
   final String iOSTestUnitId = 'ca-app-pub-3940256099942544/2934735716';
   final String androidTestUnitId = 'ca-app-pub-3940256099942544/6300978111';
 
@@ -77,6 +79,12 @@ class _WeatherScreenState extends State<WeatherScreen> {
 
   @override
   Widget build(BuildContext context) {
+
+    double itemSize;
+    Size size = MediaQuery.of(context).size; // 앱이 구동되는 모바일폰의 화면 사이즈를 가지고 오는 것
+    itemSize = size.width / 3; // 초기값 3
+
+
     return Scaffold(
         extendBodyBehindAppBar: true, // appbar 색을 바디색과 동일하게 하기 위한 것
         appBar: AppBar(
@@ -117,14 +125,17 @@ class _WeatherScreenState extends State<WeatherScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               SizedBox(
-                                height: 120.0,
+                                height: size.height/12, //120.0,
                               ),
                               Text(
                                 '$cityName',
                                 style: GoogleFonts.lato(
-                                    fontSize: 70.0,
+                                    fontSize: size.height/20,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.white),
+                              ),
+                              SizedBox(
+                                height: size.height/40, //120.0,
                               ),
                               Row(
                                 children: [
@@ -135,17 +146,17 @@ class _WeatherScreenState extends State<WeatherScreen> {
                                       return Text(
                                         '${getSystemTime()}',
                                         style: GoogleFonts.lato(
-                                            fontSize: 20.0,
+                                            fontSize: size.height/40,
                                             color: Colors.white),
                                       );
                                     },
                                   ),
                                   Text(DateFormat(' - EEEE, ').format(date),
                                       style: GoogleFonts.lato(
-                                          fontSize: 20.0, color: Colors.white)),
+                                          fontSize: size.height/40, color: Colors.white)),
                                   Text(DateFormat('d MMM, yyy').format(date),
                                       style: GoogleFonts.lato(
-                                          fontSize: 20.0, color: Colors.white))
+                                          fontSize: size.height/40, color: Colors.white))
                                 ], //children
                               )
                             ], //children
@@ -156,7 +167,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                               Text(
                                 '$temp\u2103',
                                 style: GoogleFonts.lato(
-                                    fontSize: 85.0,
+                                    fontSize: size.height/20,
                                     fontWeight: FontWeight.w300,
                                     color: Colors.white),
                               ),
@@ -164,12 +175,12 @@ class _WeatherScreenState extends State<WeatherScreen> {
                                 children: [
                                   icon,
 
-                                  SizedBox(width: 20.0),
+                                  SizedBox(width: size.width/30),
 
                                   Text(
                                     '$des',
                                     style: GoogleFonts.lato(
-                                      fontSize: 20.0,
+                                      fontSize: size.height/14,
                                       color: Colors.white,
                                     ),
                                   ),
