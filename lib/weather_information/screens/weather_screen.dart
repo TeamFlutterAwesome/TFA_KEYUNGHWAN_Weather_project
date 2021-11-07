@@ -171,16 +171,17 @@ class _WeatherScreenState extends State<WeatherScreen> {
                                     fontWeight: FontWeight.w300,
                                     color: Colors.white),
                               ),
-                              Row(
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   icon,
 
-                                  SizedBox(width: size.width/30),
+                                  // SizedBox(width: size.width/20),
 
                                   Text(
                                     '$des',
                                     style: GoogleFonts.lato(
-                                      fontSize: size.height/14,
+                                      fontSize: size.height/22,
                                       color: Colors.white,
                                     ),
                                   ),
