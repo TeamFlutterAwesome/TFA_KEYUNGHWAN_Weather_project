@@ -18,6 +18,7 @@ class _second_pageState extends State<second_page> {
 
   BannerAd banner;
 
+
   @override
   void initState() {
     // TODO: implement initState
@@ -28,6 +29,11 @@ class _second_pageState extends State<second_page> {
       adUnitId: Platform.isIOS ? iOSTestUnitId : androidTestUnitId,
       request: AdRequest(),
     )..load();
+
+    // WebView(initialUrl:
+    // 'https://www.weather.go.kr/wgis-nuri/html/map.html',
+    //   javascriptMode: JavascriptMode.unrestricted,);
+
   }
 
   @override
