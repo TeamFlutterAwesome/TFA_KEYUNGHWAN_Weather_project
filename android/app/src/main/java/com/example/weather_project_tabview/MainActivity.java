@@ -1,4 +1,4 @@
-package com.example.weather_project_tabview;
+package com.team.mustang.weather_project;
 
 import io.flutter.embedding.android.FlutterActivity;
 

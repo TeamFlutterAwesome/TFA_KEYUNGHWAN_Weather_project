@@ -21,12 +21,12 @@ class _third_pageState extends State<third_page> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    banner = BannerAd(
-      listener: AdListener(),
-      size: AdSize.smartBanner,
-      adUnitId: Platform.isIOS ? iOSTestUnitId : androidTestUnitId,
-      request: AdRequest(),
-    )..load();
+    // banner = BannerAd(
+    //   listener: AdListener(),
+    //   size: AdSize.smartBanner,
+    //   adUnitId: Platform.isIOS ? iOSTestUnitId : androidTestUnitId,
+    //   request: AdRequest(),
+    // )..load();
   }
 
   @override
@@ -38,54 +38,40 @@ class _third_pageState extends State<third_page> {
     itemSize = size.width / 3; // 초기값 3
 
     return Scaffold(
-      body: Column(
-        children: [
-          Container(
-            height: size.height / 1.4,
-            child: WebView(
-              // initialUrl: 'https://www.weather.go.kr/w/dust/image/sat.do',
-              initialUrl:
-                  'https://earth.nullschool.net/#current/chem/surface/level/overlay=cosc/orthographic=-231.95,38.77,1890/loc=127.058,37.277',
-              javascriptMode: JavascriptMode.unrestricted,
+      body: WebView(
+        // initialUrl: 'https://www.weather.go.kr/w/dust/image/sat.do',
+        initialUrl:
+            'https://earth.nullschool.net/#current/chem/surface/level/overlay=cosc/orthographic=-231.95,38.77,1890/loc=127.058,37.277',
+        javascriptMode: JavascriptMode.unrestricted,
 
-              // onWebViewCreated: (controller) {
-              //   this.controller = controller;
-              //
-              //   controller.evaluateJavascript(
-              //       "document.getElementsById('head')[0].style.display='none';");
-              //   controller.evaluateJavascript(
-              //       "document.getElementsByClassName('site-head')[0].style.display='none'");
-              //   controller.evaluateJavascript(
-              //       "document.getElementsByTagName('footer')[0].style.display='none'");
-              //
-              //   controller.evaluateJavascript(
-              //       "document.getElementsByClassName('cont-head')[0].style.display = 'none'");
-              //
-              //   controller.evaluateJavascript(
-              //       "document.getElementsByClassName('movie-lap01')[0].style.display = 'none'");
-              //
-              //   controller.evaluateJavascript(
-              //       "document.getElementsByClassName('movi-set-wrap')[0].style.display = 'none'");
-              //
-              //   controller.evaluateJavascript(
-              //       "document.getElementsByClassName('control-movi-wrap')[0].style.display = 'none'");
-              //
-              //   controller.evaluateJavascript(
-              //       "document.getElementsByClassName('footer')[0].style.display = 'none'");
-              //
-              //   controller.evaluateJavascript(
-              //       "document.getElementsByClassName('sticky-wrapper')[0].style.display='none';");
-              // },
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.all(0.0),
-            color: Colors.white,
-            height: size.height / 10,
-            child:
-                this.banner == null ? Container() : AdWidget(ad: this.banner),
-          ),
-        ],
+        onWebViewCreated: (controller) {
+          this.controller = controller;
+          //
+          //   controller.evaluateJavascript(
+          //       "document.getElementsById('head')[0].style.display='none';");
+          //   controller.evaluateJavascript(
+          //       "document.getElementsByClassName('site-head')[0].style.display='none'");
+          //   controller.evaluateJavascript(
+          //       "document.getElementsByTagName('footer')[0].style.display='none'");
+          //
+          //   controller.evaluateJavascript(
+          //       "document.getElementsByClassName('cont-head')[0].style.display = 'none'");
+          //
+          //   controller.evaluateJavascript(
+          //       "document.getElementsByClassName('movie-lap01')[0].style.display = 'none'");
+          //
+          //   controller.evaluateJavascript(
+          //       "document.getElementsByClassName('movi-set-wrap')[0].style.display = 'none'");
+          //
+          //   controller.evaluateJavascript(
+          //       "document.getElementsByClassName('control-movi-wrap')[0].style.display = 'none'");
+          //
+          //   controller.evaluateJavascript(
+          //       "document.getElementsByClassName('footer')[0].style.display = 'none'");
+          //
+          //   controller.evaluateJavascript(
+          //       "document.getElementsByClassName('sticky-wrapper')[0].style.display='none';");
+        },
       ),
     );
   }

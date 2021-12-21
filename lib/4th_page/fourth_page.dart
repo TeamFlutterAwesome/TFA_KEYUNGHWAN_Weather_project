@@ -21,12 +21,12 @@ class _fourth_pageState extends State<fourth_page> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    banner = BannerAd(
-      listener: AdListener(),
-      size: AdSize.smartBanner,
-      adUnitId: Platform.isIOS ? iOSTestUnitId : androidTestUnitId,
-      request: AdRequest(),
-    )..load();
+    // banner = BannerAd(
+    //   listener: AdListener(),
+    //   size: AdSize.smartBanner,
+    //   adUnitId: Platform.isIOS ? iOSTestUnitId : androidTestUnitId,
+    //   request: AdRequest(),
+    // )..load();
   }
 
   @override
@@ -38,17 +38,13 @@ class _fourth_pageState extends State<fourth_page> {
     itemSize = size.width / 3; // 초기값 3
 
     return Scaffold(
-      body: Column(
-        children: [
-          Container(
-            height: size.height / 1.4,
-            child: WebView(
+      body: WebView(
               //  initialUrl: 'https://www.weather.go.kr/w/ocean/chart/wave-model.do',
               initialUrl: 'https://www.dhlottery.co.kr/common.do?method=main',
               javascriptMode: JavascriptMode.unrestricted,
 
-              // onWebViewCreated: (controller) {
-              //   this.controller = controller;
+              onWebViewCreated: (controller) {
+                this.controller = controller;
               //
               //   controller.evaluateJavascript(
               //       "document.getElementsById('head')[0].style.display='none';");
@@ -74,18 +70,8 @@ class _fourth_pageState extends State<fourth_page> {
               //
               //   controller.evaluateJavascript(
               //       "document.getElementsByClassName('sticky-wrapper')[0].style.display='none';");
-              // },
+              },
             ),
-          ),
-          Container(
-            padding: EdgeInsets.all(0.0),
-            color: Colors.white,
-            height: size.height / 10,
-            child:
-                this.banner == null ? Container() : AdWidget(ad: this.banner),
-          ),
-        ],
-      ),
     );
   }
 }
