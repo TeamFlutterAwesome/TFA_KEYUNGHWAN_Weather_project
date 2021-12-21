@@ -33,7 +33,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
   Widget icon;
   String des;
   Widget airIcon;
-  Widget airState;
+  String airState;
   double dust1;
   double dust2;
 
@@ -65,11 +65,12 @@ class _WeatherScreenState extends State<WeatherScreen> {
     cityName = weatherData['name'];
     icon = model.getWeatherIcon(condition);
     airIcon = model.getAirIcon(index);
-    airState = model.getAirCondition(index);
+    airState = model.getAirCondition(index).toString().substring(6,12);
 
 
     print(temp);
     print(cityName);
+    print(airState);
   }
 
   String getSystemTime() {
@@ -214,7 +215,13 @@ class _WeatherScreenState extends State<WeatherScreen> {
                                 SizedBox(height: 10.0),
                                 airIcon,
                                 SizedBox(height: 10.0),
-                                airState,
+                                Text(
+                                  '$airState',
+                                  style: GoogleFonts.lato(
+                                      fontSize: 14.0,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                ),
                               ],
                             ),
                             Column(                         // 두번째 컬럼
@@ -273,6 +280,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                             ),
                           ],
                         ),
+                        SizedBox(height: 10.0),
                         Container(
                             height: 90.0,
                             child: this.banner == null

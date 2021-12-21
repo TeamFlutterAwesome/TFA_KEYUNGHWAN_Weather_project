@@ -1,4 +1,4 @@
-package com.team.mustang.weather_project;
+package com.team.mustang.SimpleWeather;
 
 import io.flutter.embedding.android.FlutterActivity;
 

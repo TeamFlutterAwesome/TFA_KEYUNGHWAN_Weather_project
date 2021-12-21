@@ -10,6 +10,7 @@ import 'package:weather_project_tabview/components/constants.dart';
 import '2nd_page/second_page.dart';
 import '3rd_page/third_page.dart';
 import '4th_page/fourth_page.dart';
+
 // import 'package:google_mobile_ads/google_mobile_ads.dart';
 //import 'package:weather_project_tabview/wind_information/fifth_page.dart';
 
@@ -29,7 +30,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       title: 'Weather project',
       theme: ThemeData(
-        primarySwatch: Colors.orange,
+        primarySwatch: Colors.blue,
       ),
       home: MyHomeScreen(),
     );
@@ -78,7 +79,7 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
         appBar: AppBar(
           automaticallyImplyLeading: false,
           title: Text(
-            "Weather app project",
+            "Simple Weather App",
             style: GoogleFonts.lato(
                 fontSize: 25.0,
                 fontWeight: FontWeight.bold,
@@ -135,15 +136,15 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
             //   right: 0,
             //   bottom: 0,
             //   height: itemSize / 2.0,
-              // 바텀바의 크기 조정
+            // 바텀바의 크기 조정
 
-              // child: Container(
-              //   height: 90.0,
-              //   child: this.banner == null
-              //       ? Container()
-              //       : AdWidget(ad: this.banner),
-              //   //color: Colors.black, // 배너가 들어가야 할 위치
-              // ),
+            // child: Container(
+            //   height: 90.0,
+            //   child: this.banner == null
+            //       ? Container()
+            //       : AdWidget(ad: this.banner),
+            //   //color: Colors.black, // 배너가 들어가야 할 위치
+            // ),
             // ),
           ],
         ),

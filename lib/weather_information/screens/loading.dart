@@ -60,7 +60,7 @@ class _LoadingState extends State<Loading> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-       backgroundColor: Colors.amber,
+       backgroundColor: Colors.blueAccent,
       body: Center(
         child: SpinKitDoubleBounce(
           color: Colors.white,
