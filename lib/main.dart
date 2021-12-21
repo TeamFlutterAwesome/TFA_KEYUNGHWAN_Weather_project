@@ -3,11 +3,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:weather_project_tabview/weather_information/first_page.dart';
-import 'package:weather_project_tabview/weather_image/second_page.dart';
-import 'package:weather_project_tabview/dust_information/third_page.dart';
-import 'package:weather_project_tabview/sea_information/fourth_page.dart';
+
 import 'package:weather_project_tabview/components/theme.dart';
 import 'package:weather_project_tabview/components/constants.dart';
+
+import '2nd_page/second_page.dart';
+import '3rd_page/third_page.dart';
+import '4th_page/fourth_page.dart';
 // import 'package:google_mobile_ads/google_mobile_ads.dart';
 //import 'package:weather_project_tabview/wind_information/fifth_page.dart';
 

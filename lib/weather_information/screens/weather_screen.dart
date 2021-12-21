@@ -47,7 +47,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
 
     banner = BannerAd(
       listener: AdListener(),
-      size: AdSize.banner,
+      size: AdSize.smartBanner,
       adUnitId: Platform.isIOS ? iOSTestUnitId : androidTestUnitId,
       request: AdRequest(),
     )..load();

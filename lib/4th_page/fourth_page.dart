@@ -23,7 +23,7 @@ class _fourth_pageState extends State<fourth_page> {
     super.initState();
     banner = BannerAd(
       listener: AdListener(),
-      size: AdSize.banner,
+      size: AdSize.smartBanner,
       adUnitId: Platform.isIOS ? iOSTestUnitId : androidTestUnitId,
       request: AdRequest(),
     )..load();
@@ -47,34 +47,34 @@ class _fourth_pageState extends State<fourth_page> {
               initialUrl: 'https://www.dhlottery.co.kr/common.do?method=main',
               javascriptMode: JavascriptMode.unrestricted,
 
-              onWebViewCreated: (controller) {
-                this.controller = controller;
-
-                controller.evaluateJavascript(
-                    "document.getElementsById('head')[0].style.display='none';");
-                controller.evaluateJavascript(
-                    "document.getElementsByClassName('site-head')[0].style.display='none'");
-                controller.evaluateJavascript(
-                    "document.getElementsByTagName('footer')[0].style.display='none'");
-
-                controller.evaluateJavascript(
-                    "document.getElementsByClassName('cont-head')[0].style.display = 'none'");
-
-                controller.evaluateJavascript(
-                    "document.getElementsByClassName('movie-lap01')[0].style.display = 'none'");
-
-                controller.evaluateJavascript(
-                    "document.getElementsByClassName('movi-set-wrap')[0].style.display = 'none'");
-
-                controller.evaluateJavascript(
-                    "document.getElementsByClassName('control-movi-wrap')[0].style.display = 'none'");
-
-                controller.evaluateJavascript(
-                    "document.getElementsByClassName('footer')[0].style.display = 'none'");
-
-                controller.evaluateJavascript(
-                    "document.getElementsByClassName('sticky-wrapper')[0].style.display='none';");
-              },
+              // onWebViewCreated: (controller) {
+              //   this.controller = controller;
+              //
+              //   controller.evaluateJavascript(
+              //       "document.getElementsById('head')[0].style.display='none';");
+              //   controller.evaluateJavascript(
+              //       "document.getElementsByClassName('site-head')[0].style.display='none'");
+              //   controller.evaluateJavascript(
+              //       "document.getElementsByTagName('footer')[0].style.display='none'");
+              //
+              //   controller.evaluateJavascript(
+              //       "document.getElementsByClassName('cont-head')[0].style.display = 'none'");
+              //
+              //   controller.evaluateJavascript(
+              //       "document.getElementsByClassName('movie-lap01')[0].style.display = 'none'");
+              //
+              //   controller.evaluateJavascript(
+              //       "document.getElementsByClassName('movi-set-wrap')[0].style.display = 'none'");
+              //
+              //   controller.evaluateJavascript(
+              //       "document.getElementsByClassName('control-movi-wrap')[0].style.display = 'none'");
+              //
+              //   controller.evaluateJavascript(
+              //       "document.getElementsByClassName('footer')[0].style.display = 'none'");
+              //
+              //   controller.evaluateJavascript(
+              //       "document.getElementsByClassName('sticky-wrapper')[0].style.display='none';");
+              // },
             ),
           ),
           Container(

@@ -25,7 +25,7 @@ class _second_pageState extends State<second_page> {
     super.initState();
     banner = BannerAd(
       listener: AdListener(),
-      size: AdSize.banner,
+      size: AdSize.smartBanner,
       adUnitId: Platform.isIOS ? iOSTestUnitId : androidTestUnitId,
       request: AdRequest(),
     )..load();
@@ -60,31 +60,31 @@ class _second_pageState extends State<second_page> {
 
                     javascriptMode: JavascriptMode.unrestricted,
 
-                    onWebViewCreated: (controller) {
-                      this.controller = controller;
-
-                      controller.evaluateJavascript(
-                          "document.getElementsByTagName('head')[0].style.display='none';");
-                      controller.evaluateJavascript(
-                          "document.getElementsByClassName('head')[0].style.display='none';");
-                      controller.evaluateJavascript(
-                          "document.getElementsByTagName('footer')[0].style.display='none'");
-
-                      controller.evaluateJavascript(
-                          "document.getElementsByClassName('cont-head')[0].style.display = 'none'");
-
-                      controller.evaluateJavascript(
-                          "document.getElementsByClassName('movie-lap01')[0].style.display = 'none'");
-
-                      controller.evaluateJavascript(
-                          "document.getElementsByClassName('movi-set-wrap')[0].style.display = 'none'");
-
-                      controller.evaluateJavascript(
-                          "document.getElementsByClassName('control-movi-wrap')[0].style.display = 'none'");
-
-                      controller.evaluateJavascript(
-                          "document.getElementsByClassName('footer')[0].style.display = 'none'");
-                    },
+                    // onWebViewCreated: (controller) {
+                    //   this.controller = controller;
+                    //
+                    //   controller.evaluateJavascript(
+                    //       "document.getElementsByTagName('head')[0].style.display='none';");
+                    //   controller.evaluateJavascript(
+                    //       "document.getElementsByClassName('head')[0].style.display='none';");
+                    //   controller.evaluateJavascript(
+                    //       "document.getElementsByTagName('footer')[0].style.display='none'");
+                    //
+                    //   controller.evaluateJavascript(
+                    //       "document.getElementsByClassName('cont-head')[0].style.display = 'none'");
+                    //
+                    //   controller.evaluateJavascript(
+                    //       "document.getElementsByClassName('movie-lap01')[0].style.display = 'none'");
+                    //
+                    //   controller.evaluateJavascript(
+                    //       "document.getElementsByClassName('movi-set-wrap')[0].style.display = 'none'");
+                    //
+                    //   controller.evaluateJavascript(
+                    //       "document.getElementsByClassName('control-movi-wrap')[0].style.display = 'none'");
+                    //
+                    //   controller.evaluateJavascript(
+                    //       "document.getElementsByClassName('footer')[0].style.display = 'none'");
+                    // },
                   ),
                 ),
                 Container(
