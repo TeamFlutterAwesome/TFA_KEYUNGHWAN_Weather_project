@@ -18,14 +18,10 @@ class WeatherScreen extends StatefulWidget {
 }
 
 class _WeatherScreenState extends State<WeatherScreen> {
-
-
-
   final String iOSTestUnitId = 'ca-app-pub-3940256099942544/2934735716';
   final String androidTestUnitId = 'ca-app-pub-3940256099942544/6300978111';
 
   BannerAd banner;
-
 
   Model model = Model();
   String cityName;
@@ -53,7 +49,6 @@ class _WeatherScreenState extends State<WeatherScreen> {
     )..load();
   }
 
-
   void updateData(dynamic weatherData, dynamic airData) {
     double temp2 = weatherData['main']['temp'].toDouble();
     int condition = weatherData['weather'][0]['id'];
@@ -65,8 +60,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
     cityName = weatherData['name'];
     icon = model.getWeatherIcon(condition);
     airIcon = model.getAirIcon(index);
-    airState = model.getAirCondition(index).toString().substring(6,12);
-
+    airState = model.getAirCondition(index).toString().substring(6, 12);
 
     print(temp);
     print(cityName);
@@ -80,11 +74,9 @@ class _WeatherScreenState extends State<WeatherScreen> {
 
   @override
   Widget build(BuildContext context) {
-
     double itemSize;
     Size size = MediaQuery.of(context).size; // 앱이 구동되는 모바일폰의 화면 사이즈를 가지고 오는 것
     itemSize = size.width / 3; // 초기값 3
-
 
     return Scaffold(
         extendBodyBehindAppBar: true, // appbar 색을 바디색과 동일하게 하기 위한 것
@@ -126,17 +118,17 @@ class _WeatherScreenState extends State<WeatherScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               SizedBox(
-                                height: size.height/12, //120.0,
+                                height: size.height / 12, //120.0,
                               ),
                               Text(
                                 '$cityName',
                                 style: GoogleFonts.lato(
-                                    fontSize: size.height/20,
+                                    fontSize: size.height / 20,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.white),
                               ),
                               SizedBox(
-                                height: size.height/40, //120.0,
+                                height: size.height / 40, //120.0,
                               ),
                               Row(
                                 children: [
@@ -147,19 +139,21 @@ class _WeatherScreenState extends State<WeatherScreen> {
                                       return Text(
                                         '${getSystemTime()}',
                                         style: GoogleFonts.lato(
-                                            fontSize: size.height/40,
+                                            fontSize: size.height / 40,
                                             color: Colors.white),
                                       );
                                     },
                                   ),
                                   Text(DateFormat(' - EEEE, ').format(date),
                                       style: GoogleFonts.lato(
-                                          fontSize: size.height/40, color: Colors.white)),
-                                  Text(DateFormat('d MMM, yyy').format(date),
-                                      style: GoogleFonts.lato(
-                                          fontSize: size.height/40, color: Colors.white))
-                                ], //children
-                              )
+                                          fontSize: size.height / 40,
+                                          color: Colors.white)),
+                                ],
+                              ),
+                              Text(DateFormat('d MMM, yyy').format(date),
+                                  style: GoogleFonts.lato(
+                                      fontSize: size.height / 40,
+                                      color: Colors.white))
                             ], //children
                           ),
                           Column(
@@ -168,7 +162,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                               Text(
                                 '$temp\u2103',
                                 style: GoogleFonts.lato(
-                                    fontSize: size.height/20,
+                                    fontSize: size.height / 20,
                                     fontWeight: FontWeight.w300,
                                     color: Colors.white),
                               ),
@@ -182,7 +176,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                                   Text(
                                     '$des',
                                     style: GoogleFonts.lato(
-                                      fontSize: size.height/22,
+                                      fontSize: size.height / 22,
                                       color: Colors.white,
                                     ),
                                   ),
@@ -203,7 +197,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Column(                      // 첫번째 컬럼
+                            Column(
+                              // 첫번째 컬럼
                               children: [
                                 Text(
                                   'AQI(대기질지수)',
@@ -224,7 +219,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
                                 ),
                               ],
                             ),
-                            Column(                         // 두번째 컬럼
+                            Column(
+                              // 두번째 컬럼
                               children: [
                                 Text(
                                   '미세먼지',
@@ -251,7 +247,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
                                 ),
                               ],
                             ),
-                            Column(                       // 세번째 컬럼
+                            Column(
+                              // 세번째 컬럼
                               children: [
                                 Text(
                                   '초미세먼지',
@@ -282,12 +279,12 @@ class _WeatherScreenState extends State<WeatherScreen> {
                         ),
                         SizedBox(height: 10.0),
                         Container(
-                            height: 90.0,
-                            child: this.banner == null
-                                ? Container()
-                                : AdWidget(ad: this.banner),
-                            //color: Colors.black, // 배너가 들어가야 할 위치
-                           ),
+                          height: 90.0,
+                          child: this.banner == null
+                              ? Container()
+                              : AdWidget(ad: this.banner),
+                          //color: Colors.black, // 배너가 들어가야 할 위치
+                        ),
 
                         //SizedBox(height: 70), // 메인 프레임의 하단 박스(배너자리)에 가려서 공간을
                         // 확보하기 이해 SizeBox를 넣었음.
