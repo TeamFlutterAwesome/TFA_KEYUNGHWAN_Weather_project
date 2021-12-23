@@ -79,7 +79,7 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
         appBar: AppBar(
           automaticallyImplyLeading: false,
           title: Text(
-            "Simple Weather App",
+            "Everyday Weather",
             style: GoogleFonts.lato(
                 fontSize: 25.0,
                 fontWeight: FontWeight.bold,
