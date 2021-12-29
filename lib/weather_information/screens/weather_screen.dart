@@ -19,9 +19,9 @@ class WeatherScreen extends StatefulWidget {
 
 class _WeatherScreenState extends State<WeatherScreen> {
   final String iOSTestUnitId = 'ca-app-pub-3940256099942544/2934735716';
-  final String androidTestUnitId = 'ca-app-pub-3940256099942544/6300978111';
+  final String androidTestUnitId = 'ca-app-pub-5478589299711073/7321662680'; // 배너 ID 적용
 
-  BannerAd banner;
+  BannerA banner;
 
   Model model = Model();
   String cityName;
@@ -274,13 +274,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                           ],
                         ),
                         SizedBox(height: 10.0),
-                        Container(
-                          height: 90.0,
-                          child: this.banner == null
-                              ? Container()
-                              : AdWidget(ad: this.banner),
-                          //color: Colors.black, // 배너가 들어가야 할 위치
-                        ),
+
 
                         //SizedBox(height: 70), // 메인 프레임의 하단 박스(배너자리)에 가려서 공간을
                         // 확보하기 이해 SizeBox를 넣었음.
@@ -288,7 +282,14 @@ class _WeatherScreenState extends State<WeatherScreen> {
                     )
                   ],
                 ),
-              )
+              ),
+              Container(
+                height: 90.0,
+                child: this.banner == null
+                    ? Container()
+                    : AdWidget(ad: this.banner),
+                //color: Colors.black, // 배너가 들어가야 할 위치
+              ),
             ],
           ),
         ));
