@@ -21,7 +21,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
   final String iOSTestUnitId = 'ca-app-pub-3940256099942544/2934735716';
   final String androidTestUnitId = 'ca-app-pub-5478589299711073/7321662680'; // 배너 ID 적용
 
-  BannerA banner;
+  BannerAd banner;
 
   Model model = Model();
   String cityName;
