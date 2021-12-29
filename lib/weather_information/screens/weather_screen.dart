@@ -159,29 +159,25 @@ class _WeatherScreenState extends State<WeatherScreen> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                '$temp\u2103',
-                                style: GoogleFonts.lato(
-                                    fontSize: size.height / 20,
-                                    fontWeight: FontWeight.w300,
-                                    color: Colors.white),
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                              Row(
                                 children: [
-                                  icon,
-
-                                  // SizedBox(width: size.width/20),
-
                                   Text(
-                                    '$des',
+                                    '$temp\u2103',
                                     style: GoogleFonts.lato(
-                                      fontSize: size.height / 22,
-                                      color: Colors.white,
-                                    ),
+                                        fontSize: size.height / 20,
+                                        fontWeight: FontWeight.w300,
+                                        color: Colors.white),
                                   ),
+                                  icon,
                                 ],
-                              )
+                              ),
+                              Text(
+                                '$des',
+                                style: GoogleFonts.lato(
+                                  fontSize: size.height / 22,
+                                  color: Colors.white,
+                                ),
+                              ),
                             ], // children
                           ),
                         ], //children
