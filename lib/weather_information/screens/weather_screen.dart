@@ -106,7 +106,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                 height: double.infinity,
               ),
               Container(
-                padding: EdgeInsets.all(20.0),
+                padding: EdgeInsets.all(0.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -121,18 +121,28 @@ class _WeatherScreenState extends State<WeatherScreen> {
                               SizedBox(
                                 height: size.height / 12, //120.0,
                               ),
-                              Text(
-                                '$cityName',
-                                style: GoogleFonts.lato(
-                                    fontSize: size.height / 20,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white),
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    width: size.width / 20, //
+                                  ),
+                                  Text(
+                                    '$cityName',
+                                    style: GoogleFonts.lato(
+                                        fontSize: size.height / 20,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white),
+                                  ),
+                                ],
                               ),
                               SizedBox(
                                 height: size.height / 40, //120.0,
                               ),
                               Row(
                                 children: [
+                                  SizedBox(
+                                    width: size.width / 20, //
+                                  ),
                                   TimerBuilder.periodic(
                                     (Duration(minutes: 1)),
                                     builder: (context) {
@@ -151,10 +161,17 @@ class _WeatherScreenState extends State<WeatherScreen> {
                                           color: Colors.white)),
                                 ],
                               ),
-                              Text(DateFormat('d MMM, yyy').format(date),
-                                  style: GoogleFonts.lato(
-                                      fontSize: size.height / 40,
-                                      color: Colors.white))
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    width: size.width / 20, //
+                                  ),
+                                  Text(DateFormat('d MMM, yyy').format(date),
+                                      style: GoogleFonts.lato(
+                                          fontSize: size.height / 40,
+                                          color: Colors.white)),
+                                ],
+                              )
                             ], //children
                           ),
                           Column(
@@ -162,6 +179,9 @@ class _WeatherScreenState extends State<WeatherScreen> {
                             children: [
                               Row(
                                 children: [
+                                  SizedBox(
+                                    width: size.width / 20, //
+                                  ),
                                   Text(
                                     '$temp\u2103',
                                     style: GoogleFonts.lato(
@@ -172,12 +192,19 @@ class _WeatherScreenState extends State<WeatherScreen> {
                                   icon,
                                 ],
                               ),
-                              Text(
-                                '$des',
-                                style: GoogleFonts.lato(
-                                  fontSize: size.height / 22,
-                                  color: Colors.white,
-                                ),
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    width: size.width / 20, //
+                                  ),
+                                  Text(
+                                    '$des',
+                                    style: GoogleFonts.lato(
+                                      fontSize: size.height / 22,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ], // children
                           ),
@@ -191,88 +218,94 @@ class _WeatherScreenState extends State<WeatherScreen> {
                           thickness: 2.0,
                           color: Colors.white30,
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              // 첫번째 컬럼
-                              children: [
-                                Text(
-                                  'AQI(대기질지수)',
-                                  style: GoogleFonts.lato(
-                                    fontSize: 14.0,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                SizedBox(height: 10.0),
-                                airIcon,
-                                SizedBox(height: 10.0),
-                                Text(
-                                  '$airState',
-                                  style: GoogleFonts.lato(
+                        Container(
+                          padding: EdgeInsets.all(10.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+
+
+                              Column(
+                                // 첫번째 컬럼
+                                children: [
+                                  Text(
+                                    'AQI(대기질지수)',
+                                    style: GoogleFonts.lato(
                                       fontSize: 14.0,
                                       color: Colors.white,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              // 두번째 컬럼
-                              children: [
-                                Text(
-                                  '미세먼지',
-                                  style: GoogleFonts.lato(
-                                    fontSize: 14.0,
-                                    color: Colors.white,
+                                    ),
                                   ),
-                                ),
-                                SizedBox(height: 10.0),
-                                Text(
-                                  '$dust1',
-                                  style: GoogleFonts.lato(
-                                    fontSize: 24.0,
-                                    color: Colors.white,
+                                  SizedBox(height: 10.0),
+                                  airIcon,
+                                  SizedBox(height: 10.0),
+                                  Text(
+                                    '$airState',
+                                    style: GoogleFonts.lato(
+                                        fontSize: 14.0,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold),
                                   ),
-                                ),
-                                SizedBox(height: 10.0),
-                                Text(
-                                  'μg/m3',
-                                  style: GoogleFonts.lato(
+                                ],
+                              ),
+                              Column(
+                                // 두번째 컬럼
+                                children: [
+                                  Text(
+                                    '미세먼지',
+                                    style: GoogleFonts.lato(
                                       fontSize: 14.0,
                                       color: Colors.white,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              // 세번째 컬럼
-                              children: [
-                                Text(
-                                  '초미세먼지',
-                                  style: GoogleFonts.lato(
-                                    fontSize: 14.0,
-                                    color: Colors.white,
+                                    ),
                                   ),
-                                ),
-                                SizedBox(height: 10.0),
-                                Text(
-                                  '$dust2',
-                                  style: GoogleFonts.lato(
-                                    fontSize: 24.0,
-                                    color: Colors.white,
+                                  SizedBox(height: 10.0),
+                                  Text(
+                                    '$dust1',
+                                    style: GoogleFonts.lato(
+                                      fontSize: 24.0,
+                                      color: Colors.white,
+                                    ),
                                   ),
-                                ),
-                                SizedBox(height: 10.0),
-                                Text(
-                                  'μg/m3',
-                                  style: GoogleFonts.lato(
+                                  SizedBox(height: 10.0),
+                                  Text(
+                                    'μg/m3',
+                                    style: GoogleFonts.lato(
+                                        fontSize: 14.0,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                // 세번째 컬럼
+                                children: [
+                                  Text(
+                                    '초미세먼지',
+                                    style: GoogleFonts.lato(
                                       fontSize: 14.0,
                                       color: Colors.white,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ],
-                            ),
-                          ],
+                                    ),
+                                  ),
+                                  SizedBox(height: 10.0),
+                                  Text(
+                                    '$dust2',
+                                    style: GoogleFonts.lato(
+                                      fontSize: 24.0,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  SizedBox(height: 10.0),
+                                  Text(
+                                    'μg/m3',
+                                    style: GoogleFonts.lato(
+                                        fontSize: 14.0,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
+
+                            ],
+                          ),
                         ),
                         SizedBox(height: 10.0),
                         Container(
@@ -290,7 +323,6 @@ class _WeatherScreenState extends State<WeatherScreen> {
                   ],
                 ),
               ),
-
             ],
           ),
         ));
