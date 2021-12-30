@@ -33,7 +33,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
   Widget icon;
   String des;
   Widget airIcon;
-  Widget airState;
+  String airState;
   double dust1;
   double dust2;
 
@@ -65,7 +65,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
     cityName = weatherData['name'];
     icon = model.getWeatherIcon(condition);
     airIcon = model.getAirIcon(index);
-    airState = model.getAirCondition(index);
+    airState = model.getAirCondition(index).toString().substring(6,12);
 
 
     print(temp);
@@ -169,7 +169,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                                 style: GoogleFonts.lato(
                                     fontSize: size.height/20,
                                     fontWeight: FontWeight.w300,
-                                    color: Colors.white),
+                                    color: Colors.black87),
                               ),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -182,7 +182,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                                     '$des',
                                     style: GoogleFonts.lato(
                                       fontSize: size.height/22,
-                                      color: Colors.white,
+                                      color: Colors.black87,
                                     ),
                                   ),
                                 ],
@@ -197,7 +197,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                         Divider(
                           height: 15.0,
                           thickness: 2.0,
-                          color: Colors.white30,
+                          color: Colors.black87,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -214,8 +214,14 @@ class _WeatherScreenState extends State<WeatherScreen> {
                                 SizedBox(height: 10.0),
                                 airIcon,
                                 SizedBox(height: 10.0),
-                                airState,
-                              ],
+                                Text(
+                                  '$airState',
+                                  style: GoogleFonts.lato(
+                                    fontSize: 24.0,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                ],
                             ),
                             Column(                         // 두번째 컬럼
                               children: [
