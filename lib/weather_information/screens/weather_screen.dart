@@ -85,16 +85,16 @@ class _WeatherScreenState extends State<WeatherScreen> {
           //title: Text(''),
           backgroundColor: Colors.transparent, // appbar 색을 바디색과 동일하게 하기 위한 것
           elevation: 0.0, // appbar 색을 바디색과 동일하게 하기 위한 것
-          leading: IconButton(
-              icon: Icon(Icons.near_me), onPressed: () {}, iconSize: 30.0),
-          actions: [
-            IconButton(
-                icon: Icon(
-                  Icons.location_searching,
-                ),
-                onPressed: () {},
-                iconSize: 30.0)
-          ],
+          // leading: IconButton(
+          //     icon: Icon(Icons.near_me), onPressed: () {}, iconSize: 30.0),
+          // actions: [
+          //   IconButton(
+          //       icon: Icon(
+          //         Icons.location_searching,
+          //       ),
+          //       onPressed: () {},
+          //       iconSize: 30.0)
+          // ],
         ),
         body: Container(
           child: Stack(
