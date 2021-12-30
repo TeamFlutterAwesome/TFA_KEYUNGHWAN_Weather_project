@@ -223,8 +223,6 @@ class _WeatherScreenState extends State<WeatherScreen> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-
-
                               Column(
                                 // 첫번째 컬럼
                                 children: [
@@ -303,7 +301,6 @@ class _WeatherScreenState extends State<WeatherScreen> {
                                   ),
                                 ],
                               ),
-
                             ],
                           ),
                         ),

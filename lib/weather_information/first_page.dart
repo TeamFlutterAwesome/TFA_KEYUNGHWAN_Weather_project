@@ -14,7 +14,7 @@ class _first_pageState extends State<first_page> {
     // TODO: implement build
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Weather app',
+      title: 'Everyday Weather',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
