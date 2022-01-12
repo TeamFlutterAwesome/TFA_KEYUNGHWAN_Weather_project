@@ -131,26 +131,17 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
                 ],
               ),
             ),
-            // Positioned(
-            //   left: 0,
-            //   right: 0,
-            //   bottom: 0,
-            //   height: itemSize / 2.0,
-            // 바텀바의 크기 조정
-
-            // child: Container(
-            //   height: 90.0,
-            //   child: this.banner == null
-            //       ? Container()
-            //       : AdWidget(ad: this.banner),
-            //   //color: Colors.black, // 배너가 들어가야 할 위치
-            // ),
-            // ),
           ],
         ),
       ),
     );
   }
+
+
+
+
+
+
 }
 
 // 테스트

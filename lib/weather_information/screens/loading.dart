@@ -31,9 +31,11 @@ class _LoadingState extends State<Loading> {
     // print(latitude3);
     // print(longitude3);
 
-    Network network = Network('https://api.openweathermap.org/data/2.5/'
-        'weather?lat=$latitude3&lon=$longitude3&appid=$apiKey&units=metric','https://api.openweathermap.org/data/2.5/'
-        'air_pollution?lat=$latitude3&lon=$longitude3&appid=$apiKey&units=metric');
+    Network network = Network(
+        'https://api.openweathermap.org/data/2.5/'
+            'weather?lat=$latitude3&lon=$longitude3&appid=$apiKey&units=metric',
+        'https://api.openweathermap.org/data/2.5/'
+            'air_pollution?lat=$latitude3&lon=$longitude3&appid=$apiKey&units=metric');
 
     var weatherData = await network.getJsonData();
     // print(weatherData);
@@ -41,44 +43,25 @@ class _LoadingState extends State<Loading> {
     var airData = await network.getAirData();
     // print(airData);
 
-    Navigator.push(context, MaterialPageRoute(builder: (context){
-      return WeatherScreen(parseWeatherData: weatherData,parseAirPollution: airData,);
+    Navigator.push(context, MaterialPageRoute(builder: (context) {
+      return WeatherScreen(
+        parseWeatherData: weatherData,
+        parseAirPollution: airData,
+      );
     }));
   }
-
-  // void fetchData() async {
-  //
-  //
-
-  //   } else {
-  //     print(response.statusCode);
-  //   }
-  //   //  print(response.body);
-  // }
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-       backgroundColor: Colors.blueAccent,
+      backgroundColor: Colors.blueAccent,
       body: Center(
         child: SpinKitDoubleBounce(
           color: Colors.white,
           size: 80.0,
         ),
       ),
-
-
-        // body: Center(
-        //   child: RaisedButton(
-        //     onPressed: null,
-        //     child: Text(
-        //       'Get my location',
-        //       style: TextStyle(color: Colors.white),
-        //     ),
-        //     color: Colors.blue,
-        //   ),
-        // ),
-        );
+    );
   }
 }
